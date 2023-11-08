@@ -1,0 +1,9 @@
+<button *ngIf="selectedTheme === ThemeStyle.Light;else selectDarkTpl" (click)="selectDarkTheme()" mat-icon-button type="button">
+  <mat-icon>dark_mode</mat-icon>
+</button>
+
+<ng-template #selectDarkTpl>
+  <button (click)="selectLightTheme()" mat-icon-button type="button">
+    <mat-icon>light_mode</mat-icon>
+  </button>
+</ng-template>

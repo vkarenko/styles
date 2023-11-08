@@ -1,0 +1,13 @@
+.selected-lang {
+  display: block;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+::ng-deep .lang-select-menu {
+  &.mat-mdc-menu-panel.mat-mdc-menu-panel {
+    min-width: 60px;
+  }
+}

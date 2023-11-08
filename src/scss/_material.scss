@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+@use './themes/light' as light;
+// @use './components' as components;
+
+@include mat.core();
+
+// Since version 15 of Angular Material, the typography is no longer included in the core theme.
+// If in a future version of Angular Material the typography will included in the core theme again,
+// this line should be removed.
+@include mat.typography-hierarchy(light.$my-app-light-theme);
+
+@include mat.button-theme(light.$my-app-light-theme);
+@include mat.icon-button-theme(light.$my-app-light-theme);
+@include mat.icon-theme(light.$my-app-light-theme);
+@include mat.card-theme(light.$my-app-light-theme);
+@include mat.menu-theme(light.$my-app-light-theme);
+@include mat.toolbar-theme(light.$my-app-light-theme);
+@include mat.divider-theme(light.$my-app-light-theme);
+@include mat.form-field-theme(light.$my-app-light-theme);
+@include mat.input-theme(light.$my-app-light-theme);
+@include mat.radio-theme(light.$my-app-light-theme);
+@include mat.select-theme(light.$my-app-light-theme);
+@include mat.option-theme(light.$my-app-light-theme);
+@include mat.autocomplete-theme(light.$my-app-light-theme);
+@include mat.checkbox-theme(light.$my-app-light-theme);
+@include mat.pseudo-checkbox-theme(light.$my-app-light-theme);
+@include mat.slide-toggle-theme(light.$my-app-light-theme);
+@include mat.dialog-theme(light.$my-app-light-theme);
+@include mat.progress-bar-theme(light.$my-app-light-theme);
+@include mat.core-theme(light.$my-app-light-theme);
+
+// @include components.theme(light.$my-app-light-theme);

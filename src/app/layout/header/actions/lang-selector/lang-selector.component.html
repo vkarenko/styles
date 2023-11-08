@@ -1,0 +1,12 @@
+<button [matMenuTriggerFor]="menu" aria-label="Selection of locale" data-qa="changeLangBtn" mat-icon-button>
+
+  <span class="selected-lang">{{ selectedLang.toUpperCase() }}</span>
+</button>
+
+<mat-menu class="lang-select-menu" #menu="matMenu">
+  <ng-container *ngFor="let lang of langList">
+    <button mat-menu-item [disabled]="selectedLang === lang" (click)="appLang = lang" data-qa="changeLangToBtn">
+      <span>{{ lang.toUpperCase() }}</span>
+    </button>
+  </ng-container>
+</mat-menu>

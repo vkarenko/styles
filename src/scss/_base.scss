@@ -1,0 +1,112 @@
+// Bae project Styles
+// -----------------------------------------------------------------------------
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  height: 100%;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+.strong {
+  font-weight: 500;
+}
+
+.root {
+  display: block;
+  min-height: 100%;
+
+  &__spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+}
+
+.clear-fix {
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.link {
+  color: currentColor;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  fill: currentColor;
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+figure {
+  display: block;
+  margin: 0;
+}
+
+figcaption {
+  margin: 0 0 12px;
+}
+
+pre,
+code {
+  font-family: monospace;
+}
+
+pre {
+  margin: 0;
+  overflow: auto;
+
+  > code {
+    display: block;
+    word-wrap: normal;
+  }
+}

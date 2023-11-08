@@ -1,0 +1,35 @@
+.init-spinner {
+  margin: 0 auto;
+  text-align: center;
+  line-height: 0;
+
+  &__item {
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+    border-radius: 100%;
+    display: inline-block;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+
+    &--1 {
+      animation-delay: -.32s;
+    }
+
+    &--2 {
+      animation-delay: -.16s;
+      margin: 0 4px;
+    }
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}

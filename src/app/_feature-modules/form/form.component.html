@@ -1,0 +1,71 @@
+<div class="form-box">
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm()" *ngIf="!submittedValues;else submittedBox">
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>First name:</mat-label>
+          <input matInput formControlName="firstName" type="text" />
+
+          <mat-error *ngIf="formGroup.controls['firstName'].invalid">
+            First name is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Last name:</mat-label>
+          <input matInput formControlName="lastName" type="text" />
+
+          <mat-error *ngIf="formGroup.controls['lastName'].invalid">
+            Last name is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Email:</mat-label>
+          <input matInput formControlName="email" type="email" />
+
+          <mat-error *ngIf="formGroup.controls['email'].invalid">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Choose an option</mat-label>
+          <mat-select formControlName="country">
+            <mat-option *ngFor="let country of countriesList" [value]="country.name">{{ country.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-raised-button color="warn" type="button" (click)="resetForm()">
+          <mat-icon>clear</mat-icon>
+          Reset
+        </button>
+
+        <button mat-raised-button color="primary" [disabled]="formGroup.invalid" type="submit">
+          <mat-icon>check</mat-icon>
+          Submit
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+
+  <ng-template #submittedBox>
+    <mat-card>
+      <mat-card-content>
+        <p>First name: {{ submittedValues?.firstName }}</p>
+        <p>Last name: {{ submittedValues?.lastName }}</p>
+        <p>Email: {{ submittedValues?.email }}</p>
+        <p *ngIf="submittedValues?.country">Country: {{ submittedValues?.country }}</p>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary" type="button" (click)="restartForm()">
+          <mat-icon>restart_alt</mat-icon>
+          Restart form
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-template>
+</div>

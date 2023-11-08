@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+// @use '../components' as components;
+
+$app-dark-primary: mat.define-palette(mat.$purple-palette, 300);
+$app-dark-accent: mat.define-palette(mat.$yellow-palette, 500, 600, 800);
+
+
+$app-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $app-dark-primary,
+    accent: $app-dark-accent
+  )
+));
+
+.dark-theme {
+  @include mat.button-color($app-dark-theme);
+  @include mat.icon-button-color($app-dark-theme);
+  @include mat.icon-color($app-dark-theme);
+  @include mat.card-color($app-dark-theme);
+  @include mat.menu-color($app-dark-theme);
+  @include mat.toolbar-color($app-dark-theme);
+  @include mat.divider-color($app-dark-theme);
+  @include mat.form-field-color($app-dark-theme);
+  @include mat.input-color($app-dark-theme);
+  @include mat.radio-color($app-dark-theme);
+  @include mat.select-color($app-dark-theme);
+  @include mat.option-color($app-dark-theme);
+  @include mat.autocomplete-color($app-dark-theme);
+  @include mat.checkbox-color($app-dark-theme);
+  @include mat.pseudo-checkbox-color($app-dark-theme);
+  @include mat.dialog-color($app-dark-theme);
+  @include mat.progress-bar-color($app-dark-theme);
+  @include mat.core-color($app-dark-theme);
+
+  // @include components.theme($app-dark-theme);
+}

@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use '@angular/material'as mat;
+
+@mixin color($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+
+  // Get the foreground color pallet.
+  $foreground: map.get($color-config, foreground);
+  $background: map.get($color-config, background);
+
+  // @include fill-color($color-config);
+}
+
+@mixin fill-color($config-or-theme) {
+}
+
+.cdk-overlay-dark-backdrop {
+  backdrop-filter: blur(6px);
+}

@@ -1,0 +1,15 @@
+<button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon" aria-label="Main menu">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<mat-menu class="main-nav" #menu="matMenu">
+  <a mat-menu-item [routerLink]="'/earth'" routerLinkActive #earth="routerLinkActive" [disabled]="earth.isActive" data-qa="bomNavLink">
+    <mat-icon>public</mat-icon>
+    <span>Earth</span>
+  </a>
+
+  <a mat-menu-item [routerLink]="'/form'" routerLinkActive #form="routerLinkActive" [disabled]="form.isActive" data-qa="bomNavLink">
+    <mat-icon>integration_instructions</mat-icon>
+    <span>Form</span>
+  </a>
+</mat-menu>
